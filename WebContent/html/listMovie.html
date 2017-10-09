@@ -1,0 +1,27 @@
+<div class="row top-buffer">
+<div class="col-md-3"></div>
+<div class="col-md-4">
+
+<form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control"  placeholder="enter movie name.." ng-model="movieSearch">
+    </div>
+    <button ng-click="searchMovie()" class="btn btn-default">Search</button>
+  </form>
+
+
+</div>
+</div>
+<div ng-repeat="movie in movieList | filter:{name:movieSearchFinal}" class="row top-buffer">
+<a style="display:block" ng-click="getMovieInfo(movie.id)">
+<div class="col-md-2">
+</div>
+<div class="col-md-4">
+<img src="{{movie.thumbnile}}" class="img-rounded" alt="{{movie.name}}" width="80" height="80"> 
+</div>
+<div class="col-md-4">
+<div class="row top-buffer">{{movie.name}}</div>
+<div class="row">{{movie.hero}}</div>
+</div>
+</a>
+</div>
